@@ -1,13 +1,13 @@
-# 🏡 wohnee-be: Backend for Wohnee App
+# 🏡 Boilerplate: Backend API
 
-Backend API for the Wohnee app, providing data and services for managing your living space. 
+Boilerplate Backend API, providing data and services for managing your app. 
 
-![License](https://img.shields.io/github/license/perspektive-dev/wohnee-be)
-![GitHub stars](https://img.shields.io/github/stars/perspektive-dev/wohnee-be?style=social)
-![GitHub forks](https://img.shields.io/github/forks/perspektive-dev/wohnee-be?style=social)
-![GitHub issues](https://img.shields.io/github/issues/perspektive-dev/wohnee-be)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/perspektive-dev/wohnee-be)
-![GitHub last commit](https://img.shields.io/github/last-commit/perspektive-dev/wohnee-be)
+![License](https://img.shields.io/github/license/mahendradwipurwanto/boilerplate-express)
+![GitHub stars](https://img.shields.io/github/stars/mahendradwipurwanto/boilerplate-express?style=social)
+![GitHub forks](https://img.shields.io/github/forks/mahendradwipurwanto/boilerplate-express?style=social)
+![GitHub issues](https://img.shields.io/github/issues/mahendradwipurwanto/boilerplate-express)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/mahendradwipurwanto/boilerplate-express)
+![GitHub last commit](https://img.shields.io/github/last-commit/mahendradwipurwanto/boilerplate-express)
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white)
@@ -37,30 +37,51 @@ Backend API for the Wohnee app, providing data and services for managing your li
 
 ## About
 
-The `wohnee-be` project serves as the backend API for the Wohnee application, a platform designed to simplify and enhance the management of your living space. It provides the necessary data and services for user authentication, property management, task scheduling, and communication features within the Wohnee ecosystem. This backend is built with TypeScript and Node.js, ensuring a robust and scalable foundation for the application.
+# 🚀 Boilerplate Express REST API
 
-This project aims to solve the complexities of managing a shared living space by providing a centralized system for organizing tasks, tracking expenses, and facilitating communication. The target audience includes individuals, roommates, and property managers looking to streamline their living arrangements.
-
-Key technologies used in this project include TypeScript, Node.js, Express.js, and PostgreSQL. The architecture follows a RESTful API design, with endpoints for handling authentication, property data, task management, and other related services. The unique selling point of this backend is its focus on providing a seamless and intuitive experience for managing all aspects of a shared living space.
-
----
-
-## ✨ Features
-
-- 🎯 **User Authentication** – Secure registration, login, and token-based authentication.
-- ⚡ **Property Management** – Create, manage, and track properties and occupants.
-- 📅 **Task Scheduling** – Assign and track household tasks.
-- 💬 **Communication** – Messaging or notification system for occupants.
-- 📊 **Expense Tracking** – Split bills and manage shared expenses.
-- 🔒 **Security** – JWT, validation, and secure data storage.
-- 🛠️ **Extensible** – Modular design for future scalability.
+The **Boilerplate Express** project serves as a **ready-to-use backend REST API starter** built with **TypeScript** and **Node.js (Express.js)**.  
+It provides a robust foundation for modern backend development, featuring **SSO authentication**, **automatic user registration**, **RSA-based signature verification**, and **modular CRUD endpoints** — all pre-configured and production-ready.
 
 ---
 
-## 🎬 Demo
+## 🧩 About the Project
 
-🔗 **Live Demo**: [https://wohnee.example.com/api](https://wohnee.example.com/api)  
-(Placeholder URL — replace with actual deployment)
+This boilerplate is designed for developers and teams who want to **accelerate backend setup** without spending time on repetitive configurations such as authentication, request validation, and routing structure.  
+It enables you to focus on building business features while maintaining a clean and secure backend architecture.
+
+---
+
+## ✨ Key Features
+
+- 🔐 **Authentication with SSO**  
+  Supports **single sign-on (SSO)** login flow with **automatic user registration** for new users.
+
+- 🔏 **RSA Signature Verification**  
+  Ensures request authenticity using **public/private RSA key encryption**.
+
+- 🧱 **Prebuilt CRUD Modules**  
+  Includes base controllers and services for **Create, Read, Update, Delete** operations.
+
+- ⚙️ **TypeScript + Express.js**  
+  Type-safe, modular, and scalable codebase following **clean architecture principles**.
+
+- 🗄️ **Database Ready (PostgreSQL)**  
+  Preconfigured with PostgreSQL and easily adaptable to other databases.
+
+- 🌍 **Environment Configuration**  
+  `.env` support for flexible and secure configuration across environments.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Description |
+|-------------|-------------|
+| **TypeScript** | Strongly-typed JavaScript for scalable development |
+| **Node.js** | High-performance JavaScript runtime |
+| **Express.js** | Minimalist and powerful web framework |
+| **PostgreSQL** | Reliable and performant relational database |
+| **RSA Encryption** | Secure signature verification for API requests |
 
 ---
 
@@ -69,8 +90,8 @@ Key technologies used in this project include TypeScript, Node.js, Express.js, a
 Clone and run in 3 steps:
 
 ```bash
-git clone https://github.com/perspektive-dev/wohnee-be.git
-cd wohnee-be
+git clone https://github.com/mahendradwipurwanto/boilerplate-express.git
+cd boilerplate express
 npm install && npm run dev
 ```
 
@@ -90,8 +111,8 @@ Then open [http://localhost:3000](http://localhost:3000) to view the API or docu
 ### From Source
 
 ```bash
-git clone https://github.com/perspektive-dev/wohnee-be.git
-cd wohnee-be
+git clone https://github.com/mahendradwipurwanto/boilerplate-express.git
+cd boilerplate express
 npm install
 npm run build
 npm run dev
@@ -101,13 +122,13 @@ npm run dev
 
 ## 🧭 How to Run the Code
 
-Follow these simple steps to set up and run the Wohnee Backend locally:
+Follow these simple steps to set up and run the Express REST API Backend locally:
 
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/perspektive-dev/wohnee-be.git
-cd wohnee-be
+git clone https://github.com/mahendradwipurwanto/boilerplate-express.git
+cd boilerplate express
 ```
 
 ### 2️⃣ Install Dependencies
@@ -127,7 +148,7 @@ cp .env.example .env
 Then edit `.env` to match your setup:
 
 ```env
-DATABASE_URL=postgresql://<user>:<password>@localhost:5432/wohnee
+DATABASE_URL=postgresql://<user>:<password>@localhost:5432/boilerplate
 DATABASE_SSL=false
 PORT=3000
 NODE_ENV=development
@@ -182,7 +203,7 @@ Then try:
 GET http://localhost:3000/api/v1/health
 ```
 
-🎉 You’re all set — Wohnee Backend is running locally!
+🎉 You’re all set — Express REST API Backend is running locally!
 
 ---
 
@@ -204,7 +225,7 @@ fetch('http://localhost:3000/api/users/1')
 ### Environment Variables
 
 ```env
-DATABASE_URL=postgresql://user:password@localhost:5432/wohnee
+DATABASE_URL=postgresql://user:password@localhost:5432/boilerplate
 DATABASE_SSL=false
 PORT=3000
 NODE_ENV=development
@@ -236,7 +257,7 @@ Example:
 ## 📁 Project Structure
 
 ```
-wohnee-be/
+boilerplate express/
 ├── src/
 │   ├── controllers/      # Request handlers
 │   ├── models/           # Data models
@@ -315,8 +336,8 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ## 💬 Support
 
 - 📧 **Email:** mahendradwipurwanto@gmail.com
-- 🐛 **Issues:** [GitHub Issues](https://github.com/perspektive-dev/wohnee-be/issues)
-- 📖 **Documentation:** [https://wohnee.example.com/docs](https://wohnee.example.com/docs) *(placeholder)*
+- 🐛 **Issues:** [GitHub Issues](https://github.com/mahendradwipurwanto/boilerplate-express express/issues)
+- 📖 **Documentation:** [https://boilerplate.example.com/docs](https://boilerplate.example.com/docs) *(placeholder)*
 
 ---
 
@@ -325,4 +346,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 - [Express](https://expressjs.com/)
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
 - [TypeORM](https://typeorm.io/)
-- 💡 Thanks to all [contributors](https://github.com/perspektive-dev/wohnee-be/contributors)
+- 💡 Thanks to all [contributors](https://github.com/mahendradwipurwanto/boilerplate-express express/contributors)
