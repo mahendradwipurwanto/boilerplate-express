@@ -1,12 +1,12 @@
-import { Router, Request, Response, NextFunction } from "express";
+import {Router, Request, Response, NextFunction} from "express";
 import ValidatorMiddleware from "../../middleware/validator.middleware";
-import { ResponseSuccessBuilder } from "../../../lib/helper/response";
+import {ResponseSuccessBuilder} from "../../../lib/helper/response";
 import logger from "../../../lib/helper/loggerHandler";
-import { SignInDto } from "./auth.dto";
-import { UserService } from "../user/user.service";
-import { TokenJwtVerification } from "../../../lib/auth/token";
-import { generateTokenJWT } from "../../../lib/helper/authHandler";
-import { CustomHttpExceptionError } from "../../../lib/helper/errorHandler";
+import {SignInDto} from "./auth.dto";
+import {UserService} from "../user/user.service";
+import {TokenJwtVerification} from "../../../lib/auth/token";
+import {generateTokenJWT} from "../../../lib/helper/authHandler";
+import {CustomHttpExceptionError} from "../../../lib/helper/errorHandler";
 
 /**
  * ✅ Authentication Controller
@@ -137,21 +137,23 @@ export class AuthController {
             }
 
             let user = await this.userService.GetOrgByParams(
-                { authentik_userId: payload.authentik_userId },
+                {authentik_userId: payload.authentik_userId},
                 'AND',
                 true
             );
 
+            if (user == null) {
+                user = await this.userService.createData(payload);
+                logger.info(`[AuthController] ✅ Created new user: ID=${user.id}`);
+            }
+
             if (user?.deleted_at !== null) {
                 await this.userService.restoreData(user.id);
                 user = await this.userService.GetOrgByParams(
-                    { authentik_userId: payload.authentik_userId },
+                    {authentik_userId: payload.authentik_userId},
                     "AND"
                 );
                 logger.info(`[AuthController] ♻️ Restored soft-deleted user: ID=${user.id}`);
-            } else if (!user) {
-                user = await this.userService.createData(payload);
-                logger.info(`[AuthController] ✅ Created new user: ID=${user.id}`);
             }
 
             const tokenData = await generateTokenJWT(user, this.userService);
