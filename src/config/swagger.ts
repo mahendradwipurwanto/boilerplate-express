@@ -14,10 +14,6 @@ const options = {
         },
         servers: [
             {
-                url: "https://api-wohnee.ngodingin.org/api/v1",
-                description: "Production Server",
-            },
-            {
                 url: "http://localhost:3000/api/v1",
                 description: "Local Development",
             },

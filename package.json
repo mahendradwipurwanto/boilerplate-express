@@ -1,5 +1,5 @@
 {
-  "name": "express-ts-typeorm",
+  "name": "express-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "test": "env-cmd -f .env.test jest --coverage --runInBand"
   },
   "keywords": [],
-  "author": "wohnee-perspektive",
+  "author": "mahendradwipurwanto",
   "license": "ISC",
   "description": "",
   "dependencies": {

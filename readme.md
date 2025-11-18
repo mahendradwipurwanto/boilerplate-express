@@ -163,7 +163,7 @@ DB_HOST=127.0.0.1
 DB_PORT=5432
 DB_USER=your_db_user
 DB_PASS=your_db_password
-DB_NAME=wohnee
+DB_NAME=your_db_name
 
 # Connection mode: local | cloud
 DB_CONNECTION_MODE="local"
@@ -183,9 +183,9 @@ CORS_ORIGIN=http://localhost:3000
 ############################################################
 # 🔐 JWT CONFIGURATION # Used to sign and verify JWTs — keep these secret in production!
 ############################################################
-JWT_ISSUER=wohnee@2025CraftedbyPerspektive
-JWT_ACCESS_SECRET_KEY=your_access_secret_key
-JWT_REFRESH_SECRET_KEY=your_refresh_secret_key
+JWT_ISSUER=yourjwtissuerkey
+JWT_ACCESS_SECRET_KEY=yourjwtaccesssecretkey
+JWT_REFRESH_SECRET_KEY=yourjwtrefrashsecretkey
 
 # Expiration time in seconds
 JWT_ACCESS_TOKEN_EXP=86400# 1 day
@@ -199,7 +199,7 @@ JWT_PRIVATE_KEY_FILEPATH=src/lib/credentials/private_key.pem
 # 🧾 REQUEST SIGNATURE CONFIGURATION
 ############################################################
 # Enable secure signed requests between services
-SIGNATURE_KEY=wohnee@2025CraftedbyPerspektive
+SIGNATURE_KEY=yourjwtsignaturesecretkey
 USE_SIGNATURE=true
 SIGNATURE_TOLERANCE_MINUTES=5
 
