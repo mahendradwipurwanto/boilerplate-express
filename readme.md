@@ -148,11 +148,84 @@ cp .env.example .env
 Then edit `.env` to match your setup:
 
 ```env
-DATABASE_URL=postgresql://<user>:<password>@localhost:5432/boilerplate
-DATABASE_SSL=false
-PORT=3000
+############################################################
+# 🌍 SERVER CONFIGURATION
+############################################################
+PORT=3001
 NODE_ENV=development
-JWT_SECRET=your_jwt_secret_key
+API_PREFIX=/api/v1
+TIMEZONE=Asia/Jakarta
+
+############################################################
+# 🗄️ DATABASE CONFIGURATION (PostgreSQL)
+############################################################
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_USER=your_db_user
+DB_PASS=your_db_password
+DB_NAME=wohnee
+
+# Connection mode: local | cloud
+DB_CONNECTION_MODE="local"
+
+# Enable or disable automatic schema sync
+AUTO_SYNC_DB=false
+
+# Optional: SSL CA certificate for production (uncomment if needed)
+# DB_CA=./config/ssl/server-ca.pem
+
+############################################################
+# 🌐 CORS CONFIGURATION
+############################################################
+# Allowed frontend origins (comma-separated, no spaces)
+CORS_ORIGIN=http://localhost:3000
+
+############################################################
+# 🔐 JWT CONFIGURATION # Used to sign and verify JWTs — keep these secret in production!
+############################################################
+JWT_ISSUER=wohnee@2025CraftedbyPerspektive
+JWT_ACCESS_SECRET_KEY=your_access_secret_key
+JWT_REFRESH_SECRET_KEY=your_refresh_secret_key
+
+# Expiration time in seconds
+JWT_ACCESS_TOKEN_EXP=86400# 1 day
+JWT_REFRESH_TOKEN_EXP=604800# 7 days
+
+# RSA Key Pair (optional, for signed tokens or request verification)
+JWT_PUBLIC_KEY_FILEPATH=src/lib/credentials/public_key.pem
+JWT_PRIVATE_KEY_FILEPATH=src/lib/credentials/private_key.pem
+
+############################################################
+# 🧾 REQUEST SIGNATURE CONFIGURATION
+############################################################
+# Enable secure signed requests between services
+SIGNATURE_KEY=wohnee@2025CraftedbyPerspektive
+USE_SIGNATURE=true
+SIGNATURE_TOLERANCE_MINUTES=5
+
+############################################################
+# ☁️ STORAGE CONFIGURATION
+############################################################
+# Options: local | s3 | gcs
+STORAGE=local
+
+# Local storage directory (used if STORAGE=local)
+LOCAL_STORAGE_PATH=files/images
+
+############################################################
+# ☁️ AWS S3 CONFIGURATION # Required if STORAGE=s3
+############################################################
+AWS_S3_BUCKET=your-s3-bucket-name
+AWS_S3_REGION=ap-southeast-1
+AWS_ACCESS_KEY_ID=your-aws-access-key
+AWS_SECRET_ACCESS_KEY=your-aws-secret-key
+
+############################################################
+# ☁️ GOOGLE CLOUD STORAGE CONFIGURATION # Required if STORAGE=gcs
+############################################################
+GCS_PROJECT_ID=your-gcp-project-id
+GCS_BUCKET=your-gcs-bucket-name
+GOOGLE_APPLICATION_CREDENTIALS=./config/google-credentials.json
 ```
 
 > 💡 **Tip:** Ensure PostgreSQL is running and accessible before starting the app.

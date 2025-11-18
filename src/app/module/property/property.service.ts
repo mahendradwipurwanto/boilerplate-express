@@ -7,7 +7,6 @@ import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import "dayjs/locale/id";
-import {EntityUserData} from "../user/user-data.model";
 import {Property} from "../../../lib/types/data/property";
 
 dayjs.extend(utc);
@@ -319,10 +318,6 @@ export class PropertyService {
         }
 
         const relationDeleteMap = {
-            user_data: {
-                entity: EntityUserData,
-                foreignKey: 'org_id'
-            }
         }
 
         // END SETUP DATA

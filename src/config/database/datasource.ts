@@ -3,9 +3,6 @@ import {resolve} from "path";
 import {DataSource, DataSourceOptions} from "typeorm";
 import {SeederOptions} from "typeorm-extension";
 
-import {EntityUser} from "../../app/module/user/user.model";
-import {EntityUserData} from "../../app/module/user/user-data.model";
-import {EntityRole} from "../../app/module/role/role.model";
 import {EntityProperty} from "../../app/module/property/property.model";
 import {EntityCountries} from "../../app/module/countries/countries.model";
 
@@ -36,7 +33,7 @@ const options: DataSourceOptions & SeederOptions = {
     logging: !isProduction && ['query', 'error'], // only log queries in development
     synchronize: shouldAutoSync, // never use true in production
     ssl: dbConnectionMode == "local" ? false : {rejectUnauthorized: false},
-    entities: [EntityUser, EntityUserData, EntityRole, EntityProperty, EntityCountries],
+    entities: [EntityProperty, EntityCountries],
     migrations: [resolve(__dirname, "migrations/**/*{.ts,.js}")],
     migrationsTableName: "typeorm_migrations",
     migrationsRun: false,

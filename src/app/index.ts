@@ -13,17 +13,11 @@ import {swaggerSpec} from "../config/swagger";
 import {VerifyJwtToken} from "./middleware/auth.middleware";
 import {VerifyRequestSignature} from "./middleware/signature.middleware";
 
-import {AuthController} from "./module/auth/auth.controller";
-import {EntityUser} from "./module/user/user.model";
 import {FilesController} from "./module/files/files.controller";
-import {UserService} from "./module/user/user.service";
-import {UserController} from "./module/user/user.controller";
 import {PropertyController} from "./module/property/property.controller";
 import {PropertyService} from "./module/property/property.service";
 import {EntityProperty} from "./module/property/property.model";
 import {CountriesController} from "./module/countries/countries.controller";
-import {EntityRole} from "./module/role/role.model";
-import {RoleService} from "./module/role/role.service";
 import {CountriesService} from "./module/countries/countries.service";
 import {EntityCountries} from "./module/countries/countries.model";
 
@@ -82,12 +76,6 @@ export class App {
      * ✅ Setup application routes
      */
     public SetupRoutes(app: Application): void {
-        // --- Dependency injection
-        const roleService = new RoleService(AppDataSource.getRepository(EntityRole));
-        const userService = new UserService(
-            AppDataSource.getRepository(EntityUser),
-            roleService
-        );
         const propertyService = new PropertyService(
             AppDataSource.getRepository(EntityProperty)
         );
@@ -96,8 +84,6 @@ export class App {
         );
 
         // --- Controllers
-        const authController = new AuthController(userService);
-        const userController = new UserController(userService);
         const propertyController = new PropertyController(propertyService);
         const countriesController = new CountriesController(countriesService);
 
@@ -108,8 +94,6 @@ export class App {
         app.use(`${prefix}/docs/`, swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
         // --- Route registration
-        app.use(`${prefix}/auth`, authController.router);
-        app.use(`${prefix}/user`, userController.router);
         app.use(`${prefix}/property`, propertyController.router);
         app.use(`${prefix}/countries`, countriesController.router);
 
